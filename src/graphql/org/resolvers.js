@@ -10,10 +10,8 @@ module.exports = {
   },
   Org: {
     group: (parent, args, ctx, info) => group.getGroup(parent.groudId),
-    sites(parent, args, ctx, info) {
-      return sites.filter((site) => {
-        return site.org === parent.id;
-      });
+    sites: (parent, args, ctx, info) => {
+      site.getOrgSites(parent.id);
     },
   },
 };
