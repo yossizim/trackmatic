@@ -9,7 +9,12 @@ const getDerivatives = async (
 ) => {
   model.findAll((primaryKey, input), {
     where: {
-      [Op.like]: {},
+      [Op.or]: [
+        {
+          primaryKey: groupId,
+        },
+        { primaryKey: orgId },
+      ],
     },
   });
   if (returning) {
