@@ -1,4 +1,4 @@
 type Query {
   getGroup(id: ID!): Group!
-  getGroups(query: String): [Group]!
+  getGroups(query: String!): [Group]!
 }
