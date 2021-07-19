@@ -1,0 +1,6 @@
+type Org {
+  id: ID!
+  name: String!
+  sites: [Site]!
+  group: Group!
+}

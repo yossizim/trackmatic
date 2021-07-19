@@ -1,0 +1,11 @@
+input CreateSiteInput {
+  name: String!
+  location: [Float!]!
+  group: ID!
+  org: ID!
+}
+
+input UpdateSiteInput {
+  name: String
+  location: [Float]
+}

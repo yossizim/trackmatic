@@ -1,0 +1,8 @@
+input CreateOrgInput {
+  name: String!
+  groupId: ID!
+}
+
+input updateOrgInput {
+  name: String
+}

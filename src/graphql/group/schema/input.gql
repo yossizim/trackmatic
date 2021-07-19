@@ -1,0 +1,7 @@
+input CreateGroupInput {
+  name: String!
+}
+
+input UpdateGroupInput {
+  name: String
+}

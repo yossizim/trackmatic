@@ -1,0 +1,4 @@
+type Mutation {
+  createOrg(input: CreateOrgInput!): Org!
+  updateOrg(id: ID!, input: updateOrgInput!): Org!
+}

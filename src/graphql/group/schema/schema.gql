@@ -1,0 +1,5 @@
+type Group {
+  id: ID!
+  name: String!
+  orgs: [Org]!
+}
