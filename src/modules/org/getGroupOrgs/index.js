@@ -1,10 +1,11 @@
-const fullDbSchema = require("../../../db/mysql/fullDbSchema");
-const getDerivatives = require("../../../db/mysql/getDerivatives");
-const schema = require("./schema");
-const getGroupOrgs = async (input) => {
-  const { value } = await schema.validate(input);
-  const dbConn = fullDbSchema();
-  const response = await getDerivatives(dbConn.models.Org, value);
+const {
+  mysql: { fullDbSchema, getDerivatives, getAllRows },
+} = require("../../../utils");
+
+const getGroupOrgs = async (groupId, query = {}) => {
+  const dbConn = await fullDbSchema();
+  const where = { groupId, ...getDerivatives(query) };
+  const response = await getAllRows(dbConn.models.Org, where);
   return response;
 };
 

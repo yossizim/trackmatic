@@ -1,4 +1,4 @@
 type Mutation {
   createSite(input: CreateSiteInput!): Site!
-  updateSite(id: ID!, input: UpdateSiteInput!): Site!
+  updateSite(input: UpdateSiteInput!): Site!
 }

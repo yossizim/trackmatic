@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^3.0.0",
+    "graphql": "^15.5.1",
     "joi": "^17.4.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.2.5",
     "ramda": "^0.27.1",
     "sequelize": "^6.6.4"
   },

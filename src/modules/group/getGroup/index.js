@@ -1,11 +1,10 @@
-const fullDbSchema = require("../../../db/mysql/fullDbSchema");
-const getRow = require("../../../db/mysql/getRow");
-const schema = require("./joi");
+const {
+  mysql: { fullDbSchema, getRow },
+} = require("../../../utils");
 
-const getGroup = async (input) => {
-  const { value } = await schema.validate(input);
+const getGroup = async (id) => {
   const dbConn = await fullDbSchema();
-  const response = await getRow(dbConn.models.Group, value);
+  const response = await getRow(dbConn.models.Group, id);
   return response;
 };
 

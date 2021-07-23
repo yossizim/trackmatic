@@ -1,7 +1,11 @@
 type Site {
   id: ID!
   name: String!
-  location: [Float!]!
-  group: Group!
+  location: [SiteLocation!]!
   org: Org!
+}
+
+type SiteLocation {
+  lat: Float!
+  lng: Float!
 }

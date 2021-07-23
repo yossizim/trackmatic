@@ -1,5 +1,6 @@
-const fullDbSchema = require("../../../db/mysql/fullDbSchema");
-const createRow = require("../../../db/mysql/createRow");
+const {
+  mysql: { fullDbSchema, createRow },
+} = require("../../../utils");
 const schema = require("./joi");
 
 const createOrg = async (input) => {
