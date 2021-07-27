@@ -1,11 +1,15 @@
 input CreateSiteInput {
   name: String!
-  location: [Float!]!
-  group: ID!
-  org: ID!
+  location: [SiteLocationInput!]!
+  orgId: ID!
 }
 
 input UpdateSiteInput {
   name: String
-  location: [Float]
+  location: [SiteLocationInput]
+}
+
+input SiteLocationInput {
+  lat: Float!
+  lng: Float!
 }

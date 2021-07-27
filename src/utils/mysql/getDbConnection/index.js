@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+
 const getDbConnection = (database) => {
   const sequelize = new Sequelize({
     dialect: "mysql",

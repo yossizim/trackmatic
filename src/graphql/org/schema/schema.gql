@@ -1,6 +1,6 @@
 type Org {
   id: ID!
   name: String!
-  sites: [Site]!
+  sites(query: QueryAll): [Site]!
   group: Group!
 }

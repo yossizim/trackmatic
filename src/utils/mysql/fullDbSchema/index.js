@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const getDbConnectionWithDb = require("../getDbConnectionWithDb");
+
 const fullDbSchema = async () => {
   const dbConn = await getDbConnectionWithDb();
 
@@ -54,4 +55,5 @@ const fullDbSchema = async () => {
   await dbConnConn.sync();
   return dbConn;
 };
+
 module.exports = fullDbSchema;

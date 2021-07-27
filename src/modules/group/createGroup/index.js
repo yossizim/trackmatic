@@ -1,6 +1,7 @@
-const fullDbSchema = require("../../../db/mysql/fullDbSchema");
-const createRow = require("../../../db/mysql/createRow");
-const schema = require("./joi");
+const {
+  mysql: { fullDbSchema, createRow },
+} = require("../../../utils");
+const schema = require("./schema");
 
 const createGroup = async (input) => {
   const { value } = await schema.validate(input);

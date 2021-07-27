@@ -6,7 +6,6 @@ const allDirectories = fs
   .readdirSync(__dirname, { withFileTypes: true })
   .filter((dir) => dir.isDirectory())
   .map((dir) => dir.name);
-console.log(`allDirectories`, allDirectories);
 
 let input = "";
 let schema = "";
@@ -64,7 +63,6 @@ allDirectories.forEach((dir) => {
 
 query += "}";
 mutation += "}";
-console.log(`resolvers`, resolvers);
 const typeDefs = input + schema + query + mutation;
 
 module.exports = { typeDefs, resolvers };

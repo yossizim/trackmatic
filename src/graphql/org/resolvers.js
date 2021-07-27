@@ -2,18 +2,14 @@ const { org, group, site } = require("../../modules");
 
 module.exports = {
   Query: {
-    getOrg: (parent, { id }, ctx, info) => org.getOrg(id),
+    getOrg: (_, { id }) => org.getOrg(id),
   },
   Mutation: {
-    createOrg: (parent, { input }, ctx, info) => org.createOrg(input),
-    updateOrg: (parent, { input }, ctx, info) => org.updateOrg(input),
+    createOrg: (_, { input }) => org.createOrg(input),
+    updateOrg: (_, { input }) => org.updateOrg(input),
   },
   Org: {
-    group: (parent, args, ctx, info) => group.getGroup(parent.groudId),
-    sites(parent, args, ctx, info) {
-      return sites.filter((site) => {
-        return site.org === parent.id;
-      });
-    },
+    group: (parent) => group.getGroup(parent.groupId),
+    sites: (parent, { query }) => site.getOrgSites(parent.id, query),
   },
 };

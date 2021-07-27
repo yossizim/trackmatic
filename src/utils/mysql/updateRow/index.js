@@ -1,5 +1,6 @@
 const getRow = require("../getRow");
 const { dissoc } = require("ramda");
+
 const updateRow = async (model, input, idKey = "id", returning = true) => {
   await model.update(dissoc(idKey, input), {
     where: {
